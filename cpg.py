@@ -21,7 +21,9 @@ Name = None
 if len(argv)>1:
     Name = argv[1]
 else:
-    Name = input("Enter a name for the problem").strip().replace(' ','_')
+    Name = input("Enter a name for the problem : ").strip().replace(' ','_')
+    while Name == '':
+        Name = input("Enter a valid name for te problem : ").strip().replace(' ','_')
 
 # finding the template directory path from the location of the executible or python script
 templatePath = argv[0][:-7] if "cpg.exe" in argv[0] else argv[0][:-
