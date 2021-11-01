@@ -6,7 +6,7 @@ the runners.txt file should have the command that compiles and/or runs your code
 .fileExtension : Command NAME.fileExtension <stdin.txt | tee stdout.txt : time timeout 5 Command NAME.fileExtension <stdin.txt | tee stdout.txt
 
 Spacing doesn't matter but NAME should be replace the filename arguments(leave the extension), example := testfile.cpp => NAME.cpp
-
+examples are available in templates/runners.txt
 """
 """IMPORTANT if you make an executable, the templates directory MUST BE ON THE SAME DIRECTORY AS THE EXECUTABLE"""
 
