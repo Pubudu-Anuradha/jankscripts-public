@@ -2,5 +2,6 @@
 # I prefer to have a program stop executing at 5 seconds normally, change it if you want to or have to
 # timeout and time won't work for you if you anyway are using powershell. remove them if you do.
 # The powershell equivalent of the bash "time" command is "measure-command"
-.cpp : timeout 5 g++ NAME.cpp -o NAME.exe && ./NAME.exe < stdin.txt | tee stdout.txt : time timeout 5 ./NAME.exe < stdin.txt | tee stdout.txt
+# If you get file doesn't exist errors, try adding ./ before filenames
+.cpp : timeout 5 g++ NAME.cpp -o NAME.exe && NAME.exe < stdin.txt | tee stdout.txt : time timeout 5 NAME.exe < stdin.txt | tee stdout.txt
 .py  : timeout 5 python NAME.py < stdin.txt | tee stdout.txt : time timeout 5 python NAME.py < stdin.txt | tee stdout.txt
