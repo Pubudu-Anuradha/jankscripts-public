@@ -18,7 +18,7 @@ wd = getcwd()
 
 # saving given name from command line argument or asking for a name if that doesn't exist
 Name = None
-if len(argv>1):
+if len(argv)>1:
     Name = argv[1]
 else:
     Name = input("Enter a name for the problem").strip().replace(' ','_')
