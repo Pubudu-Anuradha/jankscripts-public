@@ -104,5 +104,5 @@ for i in ['stdin.txt', 'stdout.txt']:
 # change this to suit your texteditor or ide
 system('code . '+code['filename']+' stdin.txt stdout.txt')
 
-# TODO : make the dog runner
-# system('dog')
+# calling dog. remove it if you dont need it
+system('dog')

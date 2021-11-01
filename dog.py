@@ -24,10 +24,8 @@ class event_handler:
                 if(event.src_path.endswith(i)):
                     print()
                     codeIsRunning = True
-                    if system(config[-1]) == 0:
-                        print("Program ran without errors!")
-                    else:
-                        print("*"*20)
+                    system(config[-1])
+                    print("*"*20)
                     codeIsRunning = False
                 # conf file changes stop the dog completely 
                 # so be careful not to change conf if not necessary
