@@ -82,10 +82,13 @@ codeFile.close()
 tcases = [str(i).replace('<pre>', '').replace(
     '</pre>', '').strip('<br/>').strip().split('<br/>') for i in soup.find_all('pre')]
 
+##################################################################
+# This section is gvim specific. Comment it out for other editors.
 rcfile = open('rcfile','w')
 for i in range(1,5):
     rcfile.write('silent! unmap <F%d>\nmap <F%d> :w <CR> :!'%(i,i)+runners[code['extension']]['vim']+' < stdin%d.txt <CR>\n'%(i))
 rcfile.close()
+##################################################################
 
 runScript = open('run.sh','w')
 runScript.write("set -e\n")
@@ -109,7 +112,8 @@ runScript.close()
 
 # calling gvim to open the directory with the files also opened
 # change this to suit your texteditor or ide
-# system('code . '+code['filename'])
 system('gvim %s'%(code['filename']))
+
+# system('code . '+code['filename'])
 
 # TODO: call the dog here
