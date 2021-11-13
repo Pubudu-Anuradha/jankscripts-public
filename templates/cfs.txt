@@ -1,2 +1,0 @@
-.cpp : g++ NAME.cpp -o NAME.exe     : ./NAME.exe : g++ %.cpp -o %<.exe && %<.exe
-.py  : python -m py_compile NAME.py : python NAME.py : python %

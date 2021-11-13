@@ -1,0 +1,14 @@
+{
+  ".cpp": {
+    "dogcommand": "timeout 5 g++ NAME.cpp -o NAME.exe && NAME.exe < stdin1.txt",
+    "scriptline": "./NAME.exe",
+    "compile": "g++ % -o %<.exe",
+    "run": "g++ % -o %<.exe && %<.exe"
+  },
+  ".py": {
+    "dogcommand": "timeout 5 python NAME.py < stdin1.txt",
+    "scriptline": "python NAME.py",
+    "compile": "python -m py_compile %",
+    "run": "python %"
+  }
+}
