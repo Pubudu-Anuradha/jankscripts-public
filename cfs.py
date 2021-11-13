@@ -92,8 +92,8 @@ codeFile.close()
 
 # getting testcase data from the request
 tcases = [str(i).replace('<pre>', '').replace(
-    '</pre>', '').strip('<br/>').strip().split('<br/>') for i in soup.find_all('pre')]
-
+    '</pre>', '').replace('<br/>','\n').strip().split() for i in soup.find_all('pre')]
+    
 ##################################################################
 # This section is gvim specific. Comment it out for other editors.
 rcfile = open('rcfile', 'w')
