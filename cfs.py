@@ -75,7 +75,7 @@ mkdir(Name)  # making new directory for the problem
 chdir(Name)  # changing to that directory
 
 ###############################################################################
-# making .conf file for the dog runner remove if unnecessary
+# making .conf file for the dog runner, remove if unnecessary
 conf = open(".conf", 'w')
 conf.write(code['filename'] + '\n' +
            'stdin.txt\n'
@@ -95,7 +95,7 @@ tcases = [str(i).replace('<pre>', '').replace(
     '</pre>', '').replace('<br/>','\n').strip().split() for i in soup.find_all('pre')]
     
 ##################################################################
-# This section is gvim specific. Comment it out for other editors.
+# This section is specific to the way I use gvim. Use it if you like, Remove it if you dont.
 rcfile = open('rcfile', 'w')
 for i in range(1, 5):
     rcfile.write('silent! unmap <F%d>\nmap <F%d> :w <CR> :!' % (
@@ -105,12 +105,15 @@ rcfile.write('silent! unmap <F5>\nmap <F5> :w <CR> '+' && '.join(
 rcfile.close()
 ##################################################################
 
+##################################################################
+# runscript creates a bash script that runs all the testcases against your code and compares them to the answers. 
 runScript = open('run.sh', 'w')
 runScript.write("set -e\n")
 runScript.write(runners[code['extension']]['compile'].replace(
     '%<', Name).replace('%', Name+code['extension'])+"\n")
 runScript.write("set +e\n")
-
+# remove this section and the runscript portion from the next loop if you don't need this script
+##################################################################
 
 c = 1
 for i in range(0, len(tcases), 2):
@@ -129,10 +132,12 @@ for i in range(0, len(tcases), 2):
 runScript.close()
 
 # calling gvim to open the directory with the files also opened
-# change this to suit your texteditor or ide
+# remove/change the following to suit your texteditor or ide
+# this calls gvim, which is the editor I use.
 # system('gvim %s'%(code['filename']))
 
+# this calls vscode
 system('code . '+code['filename'])
 
-# Calling the dog
+# Calling the dog, remove if unnecessary
 system('dog')

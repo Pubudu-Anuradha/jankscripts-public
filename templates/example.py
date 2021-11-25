@@ -1,6 +1,6 @@
 """
 This is just some random code.
-Make a file like this with your own template.
+Make files like this with your own template.
 """
 a,b = map(int, input().strip().split())
 for i in range(a):
